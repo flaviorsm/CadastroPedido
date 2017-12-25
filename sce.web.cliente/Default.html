@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8" />
+    <title>Produtos</title>
+    <script src="Scripts/angular.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container" ng-controller="ProdutoController">
+        <div class="row">
+            <div class="page-header">
+                <h1>Pedido</h1>                
+            </div>
+        </div>
+        <div class="row">
+            <form>
+                <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="">
+
+                <select ng-model="selectedItem" ng-options="p.Descricao for p in produtos">
+                    <option value="" selected>Selecione o produto</option>
+                </select>  
+                <label ng-hide="false">{{ selectedItem.Preco }}</label>                
+
+                <button class="btn btn-primary" ng-click="adicionaItem()">adicionar ítem</button>               
+            </form>
+
+            <table id="lista-pedido" class="table table-striped">
+                <tr>
+                    <th>Quantidade</th>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="i in itens">
+                        <td>{{i.quantidade}}</td>
+                        <td>{{i.codigo}}</td>
+                        <td>{{i.descricao}}</td>
+                        <td>{{i.preco}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var myapp = angular.module('myapp', []);
+        myapp.controller('ProdutoController', function ($scope, $http) {
+            $http.get("http://localhost:53062/api/produto/").then(function (response) {
+                $scope.produtos = response.data;
+
+                $scope.itens = [{}];                
+                $scope.adicionaItem = function () {                       
+                    $scope.itens.push({
+                        quantidade: $scope.item.quantidade,
+                        codigo: $scope.selectedItem.ProdutoID,
+                        descricao: $scope.selectedItem.Descricao,
+                        preco: $scope.selectedItem.Preco
+                    });                   
+                };
+            });
+        });       
+        
+    </script>
+
+
+</body>
+</html>

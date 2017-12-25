@@ -1,0 +1,64 @@
+﻿@model sce.model.ItemPedido
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ItemPedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pedido.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pedido.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdutoID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdutoID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

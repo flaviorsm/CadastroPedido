@@ -1,0 +1,4 @@
+C:\Users\Flavio\Google Drive\SCE\sce\sce.model\bin\Debug\sce.model.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.model\bin\Debug\sce.model.pdb
+C:\Users\Flavio\Google Drive\SCE\sce\sce.model\obj\Debug\sce.model.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.model\obj\Debug\sce.model.pdb

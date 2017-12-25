@@ -1,0 +1,110 @@
+﻿<h3>
+    {{ title }}
+</h3>
+<hr />
+<form role="form" style="max-width: 500px;">
+    <strong class="error">{{ error }}</strong>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="DataPedido">
+                Data do Pedido:
+            </label>
+            <input type="date" class="form-control" id="DataPedido" ng-model="DataPedido" min="{{date | date:'dd-MM-yyyy'}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="CPF">
+                CPF:
+            </label>
+            <input type="text" class="form-control" name="CPF" ng-model="CPF"/>            
+
+        </div>
+
+        <div class="form-group">
+            <label for="Nome">
+                Nome:
+            </label>
+            <input type="text" class="form-control" id="nome" ng-model="Nome" />
+        </div>
+
+        <div class="form-group">
+            <label for="CEP">
+                CEP:
+            </label>
+            <input type="text" class="form-control" id="CEP" ng-model="CEP" />
+        </div>
+
+        <div class="form-group">
+            <label for="Endereco">
+                Endereco:
+            </label>
+            <input type="text" class="form-control" id="Endereco" ng-model="Endereco" />
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group col-md-8">
+            <label for="ListaItens">
+                Produtos:
+            </label>
+            <select id="ListaItens" class="form-control" ng-model="selectedItem" ng-options="p.Descricao for p in produtos">
+                <option value="" selected>Selecione o produto</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="ListaItens">
+                Quantidade:
+            </label>
+            <input type="number" class="form-control" id="Quantidade" placeholder="Quantidade" ng-model="Quantidade" />
+        </div>
+
+        <div class="form-group col-md-1">
+            <label for="ListaItens">&nbsp;</label>
+            <button class="btn btn-primary right" ng-click="adicionaItem()">adicionar ítem</button>
+        </div>
+
+        <div class="form-group col-md-8">
+            <label for="Preco">
+                Valor Unitario: R$ {{ selectedItem.PrecoUnitario | number: 2 }}
+            </label>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="Total">
+                Valor total: R$ {{ selectedItem.PrecoUnitario * Quantidade | number: 2 }}
+            </label>
+        </div>
+
+        <div class="form-group col-md-12">
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="i in itens">
+                        <td>{{ i.codigo }}</td>
+                        <td>{{ i.descricao }}</td>
+                        <td>{{ i.Quantidade }}</td>
+                        <td>{{ i.PrecoUnitario  | number: 2 }}</td>
+                        <td>{{ i.preco * i.Quantidade | number: 2 }}</td>
+                        <td>
+                            <button class="glyphicon glyphicon-trash" ng-click="deletaItem(i.codigo)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="#/list" class="btn btn-info">Voltar</a>
+    <button type="submit" class="btn btn-default" ng-click="save()">
+        Salvar
+    </button>
+</form>  

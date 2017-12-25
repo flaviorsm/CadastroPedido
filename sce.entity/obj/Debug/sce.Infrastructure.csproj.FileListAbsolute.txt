@@ -1,0 +1,12 @@
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\sce.entity.dll.config
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\sce.entity.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\sce.entity.pdb
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\EntityFramework.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\sce.model.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\sce.model.pdb
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\EntityFramework.xml
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\obj\Debug\sce.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\obj\Debug\sce.entity.dll
+C:\Users\Flavio\Google Drive\SCE\sce\sce.entity\obj\Debug\sce.entity.pdb

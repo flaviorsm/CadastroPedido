@@ -1,0 +1,58 @@
+﻿@model sce.model.ItemPedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemPedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pedido.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pedido.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdutoID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdutoID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemPedidoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

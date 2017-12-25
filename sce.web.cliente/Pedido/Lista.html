@@ -1,0 +1,31 @@
+﻿<div>
+    <a href="#!/novo" class="btn">Create</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Data Pedido</th>
+            <th>Cliente</th>
+            <th>CPF</th>
+            <th>CEP</th>
+            <th>Endereço</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="ped in pedidos">
+            <td>{{ ped.PedidoID }}</td>
+            <td>{{ ped.DataPedido }}</td>
+            <td>{{ ped.CPF }}</td>
+            <td>{{ ped.Nome }}</td>
+            <td>{{ ped.CEP }}</td>
+            <td>{{ ped.Endereco }}</td>
+            <td>
+                <a href="#/edit/{{item.PedidoID}}" class="glyphicon glyphicon-edit"></a>
+            </td>
+            <td>
+                <a href="#/delete/{{item.PedidoID}}" class="glyphicon glyphicon-trash"></a>
+            </td>
+        </tr>
+    </table>
+</div>
